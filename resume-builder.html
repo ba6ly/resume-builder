@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="resume-builder.css">
+</head>
+<body>
+    <div class="container">
+        <h1> Professional Resume Builder</h1>
+        
+        <div class="form-section">
+            <h2>Personal Information</h2>
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="fullName" placeholder="bably">
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="email" placeholder="bably@example.com">
+            </div>
+            <div class="form-group">
+                <label>Phone</label>
+                <input type="tel" id="phone" placeholder="91xxxxxxxx">
+            </div>
+            <div class="form-group">
+                <label>Location</label>
+                <input type="text" id="location" placeholder="City, Country">
+            </div>
+            <div class="form-group">
+                <label>LinkedIn (optional)</label>
+                <input type="text" id="linkedin" placeholder="linkedin.com/in/username">
+            </div>
+            <div class="form-group">
+                <label>GitHub (optional)</label>
+                <input type="text" id="github" placeholder="github.com/username">
+            </div>
+            <div class="form-group">
+                <label>Professional Summary</label>
+                <textarea id="summary" placeholder="Brief overview of your professional background and goals..."></textarea>
+            </div>
+
+            <h2 style="margin-top: 30px;">Experience</h2>
+            <div id="experienceContainer"></div>
+            <button class="add-btn" onclick="addExperience()">+ Add Experience</button>
+
+            <h2 style="margin-top: 30px;">Education</h2>
+            <div id="educationContainer"></div>
+            <button class="add-btn" onclick="addEducation()">+ Add Education</button>
+
+            <h2 style="margin-top: 30px;">Skills</h2>
+            <div class="form-group">
+                <label>Skills (comma separated)</label>
+                <input type="text" id="skills" placeholder="JavaScript, Python, Project Management">
+            </div>
+
+             <h2 style="margin-top: 30px;">Projects</h2>
+            <div class="form-group">
+                <label>Projects</label>
+                <input type="text" id="project" placeholder="Project Name - Brief Description">
+                <button class="add-btn" onclick="addEducation()">+ Add Project</button>
+            </div>
+
+            <button class="download-btn" onclick="downloadResume()">📥 Download Resume as PDF</button>
+        </div>
+
+        <div class="preview-section">
+            <div class="resume-preview" id="resumePreview">
+                <div class="resume-header">
+                    <h3 id="previewName">Your Name</h3>
+                    <p id="previewContact"></p>
+                </div>
+
+                <div class="resume-section" id="summarySection" style="display: none;">
+                    <h4>Professional Summary</h4>
+                    <p id="previewSummary"></p>
+                </div>
+
+                <div class="resume-section" id="experienceSection" style="display: none;">
+                    <h4>Experience</h4>
+                    <div id="previewExperience"></div>
+                </div>
+
+                <div class="resume-section" id="educationSection" style="display: none;">
+                    <h4>Education</h4>
+                    <div id="previewEducation"></div>
+                </div>
+
+                <div class="resume-section" id="skillsSection" style="display: none;">
+                    <h4>Skills</h4>
+                    <div class="skills-list" id="previewSkills"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="resume-builder.js"></script>
+</body>
+</html>
